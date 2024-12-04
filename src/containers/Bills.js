@@ -29,12 +29,9 @@ export default class {
 
   getBills = () => {
     if (this.store) {
-      return this.store
-      .bills()
-      .list()
+      return this.store.bills().list()
       .then(snapshot => {
-        const bills = snapshot
-          .map(doc => {
+        const bills = snapshot.map(doc => {
             try {
               return {
                 ...doc,
